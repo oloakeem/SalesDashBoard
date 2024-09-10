@@ -2,8 +2,9 @@ import React from "react";
 import { useState } from "react";
 import styles from "./SignUp.module.css";
 import { Link } from "react-router-dom";
-import CLogo from "../../assets/data-svgrepo-com.svg";
+import CLogo from "../../assets/bar-chart-svgrepo-com.svg";
 import backImage from "../../assets/pexels-artempodrez-5716042 (2).jpg";
+import headerImage from "../../assets/picsvg_download.svg";
 
 const SignUp = () => {
   const [userName, setUserName] = useState("");
@@ -51,11 +52,11 @@ const SignUp = () => {
         <div className={styles.secionA}>
           <div className={styles.CNames}>
             <img src={CLogo} alt="CompanyLogo" />
-            <h2>Company Name</h2>
+            <h3>Company Name</h3>
           </div>
-          <h3>Create an account</h3>
-
           <form className={styles.SignUpForm} onSubmit={handleSubmit}>
+            <h2>Create an account</h2>
+
             <div className={styles.formGroup}>
               <label htmlFor="userNameInput">Username</label>
               <input
@@ -108,6 +109,8 @@ const SignUp = () => {
           </form>
         </div>
         <div className={styles.secionB}>
+          <img className={styles.headerImageSignUp} src={headerImage} alt="" />
+
           <img className={styles.backImageSignUp} src={backImage} alt="" />
         </div>
       </div>

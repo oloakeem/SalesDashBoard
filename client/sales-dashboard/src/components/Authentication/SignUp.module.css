@@ -15,9 +15,9 @@
     align-items: center; /* Aligns the image and text vertically in the center */
 }
 .CNames img{
-    width: 24px;
-    height: 24px;
-    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
 }
 
 .SignUpForm{
@@ -31,6 +31,7 @@
     font-weight: bold;
 }
 .SignUpForm input{
+    height: 18px;
     border-radius: 16px;
     border: 1px solid gray;
     padding: 6px;
@@ -54,9 +55,27 @@
 align-self: center;
 }
 .secionB{
-    background-color: rgb(229, 229, 229);
+    background-color: rgba(229, 229, 229, 0.267);
     margin: 3%;
     border-radius: 2%;
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+}
+.backImageSignUp{
+    position: absolute;
+    top: 50%; /* Centers vertically */
+    left: 50%; /* Centers horizontally */
+    transform: translate(-50%, -50%); /* Adjusts for the image's own dimensions */
+    border: 15px solid black;
+    border-radius: 16px;
+    max-width: 100%; /* Ensures the image fits within the container width */
+    height: auto; /* Maintains aspect ratio */
+
+}
+.headerImageSignUp{
+    display: none;
+
 
 }
 
@@ -64,6 +83,43 @@ align-self: center;
     /* For tablets: */
     .AuthGrid{
         grid-template-columns: .4fr .6fr;
+    }
+    .SignUpForm{
+        margin-top: 25%;
+    }
+    .secionB{
+        height: 100%;
+    }
+    .backImageSignUp{
+        position: absolute;
+        top:auto;
+        left: auto;
+        bottom: -1%; /* Aligns to the bottom of the parent container */
+        right: -20%; /* Aligns to the left edge of the parent container */
+        width: 100%; /* Optional, to stretch across the width */
+        height: auto; /* Maintains aspect ratio */
+        border: 15px solid black;
+        min-height: 75%; /* Minimum height for the image */
+
+        border-radius: 16px;
+        transform: none; /* Adjusts for the image's own dimensions */
+        aspect-ratio: 16 / 9; /* or any other ratio */
+    }
+
+    .headerImageSignUp{
+        display: block;
+        position: absolute;
+        top:0;
+        right: 0;
+        transform: rotate(350deg); /* Rotates the element 45 degrees */
+    
+    }
+    .SignUpForm input{
+        height: 20px;
+        border-radius: 20px;
+        border: 1px solid gray;
+        padding: 8px;
+        margin-bottom: .5rem;
     }
  
 }
@@ -77,20 +133,15 @@ align-self: center;
     margin-top: 25%;
 }
 .secionB{
-    position: relative;
-
-    overflow: hidden;
+    height: 100%;
 }
 .backImageSignUp{
-    position: absolute;
     bottom: -1%; /* Aligns to the bottom of the parent container */
-    right: -8%; /* Aligns to the left edge of the parent container */
-    width: 100%; /* Optional, to stretch across the width */
-    height: auto; /* Maintains aspect ratio */
-    border: 15px solid black;
-    border-radius: 16px;
+    right: -15%; /* Aligns to the left edge of the parent container */
 }
-
+.headerImageSignUp{
+    right: 10%;
+}
 
 
 }

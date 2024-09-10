@@ -2,7 +2,9 @@ import React from "react";
 import { useState } from "react";
 import styles from "./SignIn.module.css";
 import { Link } from "react-router-dom";
-import CLogo from "../../assets/data-svgrepo-com.svg";
+import CLogo from "../../assets/bar-chart-svgrepo-com.svg";
+import backImage from "../../assets/pexels-artempodrez-5716042 (2).jpg";
+import headerImage from "../../assets/picsvg_download.svg";
 
 const SignIn = () => {
   const [userName, setUserName] = useState("");
@@ -13,16 +15,21 @@ const SignIn = () => {
   return (
     <>
       <div className={styles.AuthGrid}>
-        <div className={styles.secionB}>Section B</div>
+        <div className={styles.secionB}>
+          <img className={styles.headerImageSignUp} src={headerImage} alt="" />
+
+          <img className={styles.backImageSignUp} src={backImage} alt="" />
+        </div>
 
         <div className={styles.secionA}>
           <div className={styles.CNames}>
             <img src={CLogo} alt="CompanyLogo" />
             <h2>Company Name</h2>
           </div>
-          <h3>Login in here</h3>
 
           <form className={styles.SignInForm} onSubmit={handleSubmit}>
+            <h3>Login in.</h3>
+
             <div className={styles.formGroupSignIn}>
               <label htmlFor="userNameInput">Username</label>
               <input
@@ -49,7 +56,7 @@ const SignIn = () => {
             </button>
             <div className={styles.formGroupSignIn}>
               <p className={styles.GoToSignUp}>
-                Don't Have an Account?. <Link>Create One</Link>
+                Don't Have an Account?. <Link to="/SignUp">Sign up here</Link>
               </p>
             </div>
           </form>

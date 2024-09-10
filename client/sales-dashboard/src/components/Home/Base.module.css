@@ -1,0 +1,147 @@
+.baseGridLayout {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "menu"
+      "content";
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid black;
+  }
+  
+  /* Home Page Content */
+  .box1 {
+    grid-area: menu;
+    padding: 20px;
+    transition: transform 0.5s ease;
+    z-index: 1;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 150px;
+  }
+  .hamBurgerMenu{
+    width: 35px;
+    height: 35px;
+  }
+  /* Nav Menu */
+  .box2 {
+    grid-area: menu;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width:70%;
+    background-color: rgb(228, 228, 228);
+    border-right: 1px solid black;
+    color: black;
+    padding: 20px;
+    z-index: 2;
+    transition: transform 0.5s ease;
+
+  }
+  .box2 ul{
+    list-style-type: none; /* Removes the bullets */
+  padding: 0;            /* Optionally, remove padding 
+  */
+    display: flex;
+    flex-direction: column;
+}
+
+  .box3{
+    grid-area: "content";
+    overflow-y: auto;
+    height: calc(100vh - 200px); /* Adjust based on the height of .box1 */
+
+  }
+  .graphGroup{
+      width: 100%;
+      height: 200px;
+      border: 1px solid green;
+      margin: 5%;
+  }
+  /* Initial state: off-screen */
+  .slideOut {
+    transform: translateX(-100%);
+  }
+  
+  /* Visible state: slide in */
+  .slideIn {
+    transform: translateX(0);
+  }
+
+   .unOrderedListGroup li{
+    display: flex;
+    align-items: center; /* Align items vertically */
+    margin: 10px 0; /* Optional: add space between the list items */
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background and transform */
+
+   }
+   .unOrderedListGroup li:hover {
+    background-color: #f0f0f0; /* Change background color on hover */
+    transform: scale(1.05); /* Slightly scale up the item on hover */
+  }
+
+   .navImages{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+   }
+   .navHeader{
+    display: flex;
+    align-items: center;
+   }
+  @media only screen and (min-width: 600px) {
+  /* For tablets: */
+  
+  .baseGridLayout {
+    display: grid;
+    grid-template-columns: 0.3fr .7fr; /* 40% for nav, 60% for content */
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "navBar info"
+      "navBar content"; /* NavBar on the left, content on the right */
+    height: 100vh;
+  }
+
+  .box1 {
+    grid-area: info;
+    padding: 20px;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    height: 200px;
+  }
+
+  .box2 {
+    grid-area: navBar;
+    position: static; /* No absolute positioning on tablets */
+    height: auto; /* Adjust height to fit content */
+    width: 80%; /* Let it take full width of its grid area */
+    padding: 20px;
+    z-index: 2;
+    transform: translateX(0);
+    transition: transform 0.5s ease;
+
+  }
+
+  .box3 {
+    grid-area: content;
+    overflow-y: auto; /* Keep scroll functionality for content */
+  
+  }
+
+  .hamBurgerMenu{
+    display: none;
+  }
+}
+
+   @media only screen and (min-width: 768px) {
+    /* For desktop: */   
+  }

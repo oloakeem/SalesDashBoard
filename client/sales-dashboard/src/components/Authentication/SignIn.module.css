@@ -27,12 +27,12 @@
     align-items: center;
     width: 100%;
     margin-top: 20%;
-    
 }
 .SignInForm label{
     font-weight: bold;
 }
 .SignInForm input{
+    height: 18px;
     border-radius: 16px;
     border: 1px solid gray;
     padding: 6px;
@@ -57,9 +57,27 @@ align-self: center;
 }
 .secionB{
     grid-row: 2;
-    background-color: rgb(243, 243, 243);
+    background-color: rgba(229, 229, 229, 0.267);
     margin: 3%;
     border-radius: 2%;
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+
+}
+.backImageSignUp{
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    border: 15px solid black;
+    border-radius: 16px;
+    max-width: 100%; 
+    height: auto; 
+}
+.headerImageSignUp{
+    display: none;
+
 
 }
 
@@ -74,9 +92,41 @@ align-self: center;
     }
     .secionB{
         grid-row: 1;
+        height: 100%;
+
 
     }
- 
+    .backImageSignUp{
+        position: absolute;
+        top:auto;
+        left: auto;
+        bottom: -1%; /* Aligns to the bottom of the parent container */
+        left: -20%; /* Aligns to the left edge of the parent container */
+        width: 100%; /* Optional, to stretch across the width */
+        height: auto; /* Maintains aspect ratio */
+        border: 15px solid black;
+        min-height: 75%; /* Minimum height for the image */
+
+        border-radius: 16px;
+        transform: none; /* Adjusts for the image's own dimensions */
+        aspect-ratio: 16 / 9; /* or any other ratio */
+    }
+
+    .headerImageSignUp{
+        display: block;
+        position: absolute;
+        top:0;
+        left: 0;
+        transform: rotate(350deg); /* Rotates the element 45 degrees */
+    
+    }
+    .SignInForm input{
+        height: 20px;
+        border-radius: 20px;
+        border: 1px solid gray;
+        padding: 8px;
+        margin-bottom: .5rem;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -92,5 +142,13 @@ align-self: center;
     grid-row: 1;
 
 }
+.backImageSignUp{
+    bottom: -1%; /* Aligns to the bottom of the parent container */
+    left: -15%; /* Aligns to the left edge of the parent container */
+}
+.headerImageSignUp{
+    left: 10%;
+}
+
 
 }
