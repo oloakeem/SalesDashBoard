@@ -1,3 +1,9 @@
+.baseBody{
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 100vh; /* Full viewport height */
+}
 .baseGridLayout {
     display: grid;
     grid-template-columns: 1fr;
