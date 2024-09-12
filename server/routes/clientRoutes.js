@@ -17,6 +17,13 @@ router.post('', async(req,res)=>{
     }
 })
 router.get('', async(req,res)=>{
+    try {
+        const clients = await Client.find(); // Fetch all resources from the database
+        res.status(200).json(clients); // Send the resources as JSON        
+    } catch (error) {
+        res.status(400).json({message: error.message})
+ 
+    }
     
 })
 router.get('/:id', async(req,res)=>{

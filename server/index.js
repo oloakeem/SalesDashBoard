@@ -6,6 +6,8 @@ const cors = require('cors');
 require('dotenv').config(); // Load environment variables
 const userRoutes = require("../server/routes/userRoutes")
 const clientRoutes = require("../server/routes/clientRoutes")
+const csvRoutes = require("../server/routes/csvRouter")
+
 
 
 
@@ -22,6 +24,8 @@ app.use(express.json());
 app.use(cors());
 app.use('/api/Users', userRoutes); // Use routes
 app.use('/api/Clients', clientRoutes); // Use routes
+app.use('/api', csvRoutes);
+
 
 
 app.listen(port,()=>{

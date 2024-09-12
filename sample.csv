@@ -1,0 +1,11 @@
+name,email,phone,membershipType,startDate,paymentMethod
+John Doe,john.doe@example.com,+1234567890,1,2024-01-15,Credit Card
+Jane Smith,jane.smith@example.com,+0987654321,2,2024-02-20,Debit Card
+Alice Johnson,alice.johnson@example.com,+1112233445,3,2024-03-10,PayPal
+Bob Brown,bob.brown@example.com,+2223344556,1,2024-04-25,Bank Transfer
+Emily Davis,emily.davis@example.com,+3334455667,2,2024-05-30,Credit Card
+Michael Wilson,michael.wilson@example.com,+4445566778,3,2024-06-15,Debit Card
+Olivia Lee,olivia.lee@example.com,+5556677889,1,2024-07-10,PayPal
+James Taylor,james.taylor@example.com,+6667788990,2,2024-08-05,Bank Transfer
+Sophia Martinez,sophia.martinez@example.com,+7778899001,3,2024-09-12,Credit Card
+William Anderson,william.anderson@example.com,+8889900112,1,2024-10-20,Debit Card

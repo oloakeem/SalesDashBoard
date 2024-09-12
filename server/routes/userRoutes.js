@@ -18,7 +18,16 @@ router.post('/',async(req,res)=>{
     }
 })
 //Get
-
+router.get('', async(req,res)=>{
+    try {
+        const users = await User.find(); // Fetch all resources from the database
+        res.status(200).json(users); // Send the resources as JSON        
+    } catch (error) {
+        res.status(400).json({message: error.message})
+ 
+    }
+    
+})
 //Get byID
 
 //Put byID

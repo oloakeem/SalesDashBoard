@@ -51,7 +51,7 @@
 
   }
   .box2 ul{
-    list-style-type: none; /* Removes the bullets */
+      list-style-type: none; /* Removes the bullets */
   padding: 0;            /* Optionally, remove padding 
   */
     display: flex;
@@ -84,24 +84,37 @@
     display: flex;
     align-items: center; /* Align items vertically */
     margin: 10px 0; /* Optional: add space between the list items */
-    padding: 10px;
+    padding: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background and transform */
-
+    border-radius: 8px;
+    font-weight: 550;
    }
+   .unOrderedListGroup a{
+    text-decoration: none;
+    color: black;
+
+    }
    .unOrderedListGroup li:hover {
-    background-color: #f0f0f0; /* Change background color on hover */
+    background-color: #f0f0f0; /* 
+    Change background color on hover */
     transform: scale(1.05); /* Slightly scale up the item on hover */
+    
   }
 
    .navImages{
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     margin-right: 5px;
    }
    .navHeader{
     display: flex;
     align-items: center;
+   }
+   .sublist li  {
+    list-style-type: disc; /* Change bullet style */
+    margin-left: 50px; /* Indent nested list items */
+    font-weight: 100;
    }
   @media only screen and (min-width: 600px) {
   /* For tablets: */

@@ -20,6 +20,11 @@ const Base = () => {
   const closeNav = () => {
     //  setIsNavOpen(false);
   };
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSublist = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <>
@@ -49,20 +54,25 @@ const Base = () => {
                 <Link to="Layout1">Add new client</Link>
               </li>
               <li onClick={closeNav}>
-                {" "}
                 <img className={styles.navImages} src={addUser} alt="" />
-                Add group via csv
+                <Link to="UploadCSV"> Add group via csv</Link>
               </li>
               <li onClick={closeNav}>
-                {" "}
                 <img className={styles.navImages} src={viewUsers} alt="" />
                 View Clients
               </li>
-              <li onClick={closeNav}>
-                {" "}
+              <li onClick={toggleSublist}>
                 <img className={styles.navImages} src={viewGraphs} alt="" />
                 Analysis
               </li>
+              {isOpen && (
+                <ul className={styles.sublist}>
+                  <li>Clients</li>
+                  <li>Employees</li>
+                  <li>Sales</li>
+                  <li>Goals</li>
+                </ul>
+              )}
             </ul>
           </div>
           <div className={styles.box3}>
