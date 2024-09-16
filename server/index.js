@@ -7,6 +7,7 @@ require('dotenv').config(); // Load environment variables
 const userRoutes = require("../server/routes/userRoutes")
 const clientRoutes = require("../server/routes/clientRoutes")
 const csvRoutes = require("../server/routes/csvRouter")
+const clientStatsRoutes = require('../server/routes/clientStatsRoutes');
 
 
 
@@ -25,6 +26,7 @@ app.use(cors());
 app.use('/api/Users', userRoutes); // Use routes
 app.use('/api/Clients', clientRoutes); // Use routes
 app.use('/api', csvRoutes);
+app.use('/api', clientStatsRoutes);
 
 
 

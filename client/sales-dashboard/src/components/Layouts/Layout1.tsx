@@ -1,7 +1,17 @@
-// Layout1.js
 import React, { useState } from "react";
-
+import pencilImg from "../../assets/edit-svgrepo-com.svg";
 import styles from "./Layout1.module.css";
+
+type TargetGoals = {
+  yoga: boolean;
+  cardio: boolean;
+  aerobics: boolean;
+  physicalFitness: boolean;
+  fatLoss: boolean;
+  freeHand: boolean;
+  muscleBuilding: boolean;
+  endurance: boolean;
+};
 
 const Layout1 = () => {
   const [formData, setFormData] = useState({
@@ -11,16 +21,40 @@ const Layout1 = () => {
     membershipType: "",
     startDate: "",
     paymentMethod: 0,
+    targetGoals: {
+      yoga: false,
+      cardio: false,
+      aerobics: false,
+      physicalFitness: false,
+      fatLoss: false,
+      freeHand: false,
+      muscleBuilding: false,
+      endurance: false,
+    } as TargetGoals,
   });
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const target = e.target as HTMLInputElement | HTMLSelectElement;
+
+    if (target.type === "checkbox") {
+      const { name, checked } = target as HTMLInputElement;
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        targetGoals: {
+          ...prevFormData.targetGoals,
+          [name]: checked,
+        },
+      }));
+    } else {
+      setFormData({
+        ...formData,
+        [target.name]: target.value,
+      });
+    }
   };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission (e.g., send data to backend)
@@ -51,6 +85,10 @@ const Layout1 = () => {
     <div className={styles.formContainer}>
       <h2>Gym Membership Form</h2>
       <form onSubmit={handleSubmit} className={styles.membershipForm}>
+        <div className={styles.formSectionHeader}>
+          <h3>Personal Information</h3>
+          <img className={styles.formImg} src={pencilImg} alt="" />
+        </div>
         <div className={styles.formGroup}>
           <label htmlFor="name">Name:</label>
           <input
@@ -86,7 +124,10 @@ const Layout1 = () => {
             required
           />
         </div>
-
+        <div className={styles.formSectionHeader}>
+          <h3>Membership Packages</h3>
+          <img className={styles.formImg} src={pencilImg} alt="" />
+        </div>
         <div className={styles.formGroup}>
           <label htmlFor="membershipType">Membership Type:</label>
           <select
@@ -135,7 +176,31 @@ const Layout1 = () => {
             <option value="Bank Transfer">Bank Transfer</option>
           </select>
         </div>
-
+        <div className={styles.formSectionHeader}>
+          <h3>Target / Goals</h3>
+          <img className={styles.formImg} src={pencilImg} alt="" />
+        </div>
+        <div className={styles.formGroup}>
+          {Object.keys(formData.targetGoals).map((goal) => (
+            <div key={goal} className={styles.checkboxGroup}>
+              <label>
+                <input
+                  type="checkbox"
+                  name={goal}
+                  checked={formData.targetGoals[goal as keyof TargetGoals]}
+                  onChange={handleChange}
+                />
+                {goal.charAt(0).toUpperCase() +
+                  goal.slice(1).replace(/([A-Z])/g, " $1")}
+              </label>
+            </div>
+          ))}
+        </div>
+        <div className={styles.formSectionHeader}>
+          <h3>Medical Conditions</h3>
+          <img className={styles.formImg} src={pencilImg} alt="" />
+        </div>
+        {/* Add medical conditions fields here */}
         <button type="submit" className={styles.submitButton}>
           Submit
         </button>

@@ -16,9 +16,13 @@
     width: 100vw;
     overflow: hidden;
     border-radius: 16px;
-    border: 1px solid black;
+    border: 1px solid rgb(195, 195, 195);;
   }
-  
+  .lineBreak{
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid  #d7d7d7;
+  }
   /* Home Page Content */
   .box1 {
     grid-area: menu;
@@ -42,9 +46,9 @@
     left: 0;
     height: 100vh;
     width:70%;
-    background-color: rgb(228, 228, 228);
-    border-right: 1px solid black;
-    color: black;
+    background-color: white;
+    border-right: 1px solid rgb(195, 195, 195);;
+    color: #505050;
     padding: 20px;
     z-index: 2;
     transition: transform 0.5s ease;
@@ -62,7 +66,7 @@
     grid-area: "content";
     overflow-y: auto;
     height: calc(100vh - 200px); /* Adjust based on the height of .box1 */
-
+    
   }
   .graphGroup{
       width: 100%;
@@ -92,11 +96,11 @@
    }
    .unOrderedListGroup a{
     text-decoration: none;
-    color: black;
+    color: #505050;
 
     }
    .unOrderedListGroup li:hover {
-    background-color: #f0f0f0; /* 
+    background-color: #ebebeb; /* 
     Change background color on hover */
     transform: scale(1.05); /* Slightly scale up the item on hover */
     
@@ -111,9 +115,11 @@
     display: flex;
     align-items: center;
    }
+   .sublist{
+    list-style: disc;
+   }
    .sublist li  {
-    list-style-type: disc; /* Change bullet style */
-    margin-left: 50px; /* Indent nested list items */
+    margin-left: 30px; /* Indent nested list items */
     font-weight: 100;
    }
   @media only screen and (min-width: 600px) {
@@ -121,7 +127,7 @@
   
   .baseGridLayout {
     display: grid;
-    grid-template-columns: 0.3fr .7fr; /* 40% for nav, 60% for content */
+    grid-template-columns: 0.2fr .8fr; /* 40% for nav, 60% for content */
     grid-template-rows: auto;
     grid-template-areas: 
       "navBar info"
@@ -162,5 +168,9 @@
 }
 
    @media only screen and (min-width: 768px) {
+    .box2{
+      width: 60%; /* Let it take full width of its grid area */
+
+    }
     /* For desktop: */   
   }
