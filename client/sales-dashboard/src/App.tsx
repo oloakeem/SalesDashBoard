@@ -2,7 +2,7 @@ import "./App.css";
 import SignIn from "./components/Authentication/SignIn";
 import SignUp from "./components/Authentication/SignUp";
 import Home from "./components/Home/Base";
-import Layout1 from "./components/Layouts/Layout1";
+import Layout1 from "./components/Layouts/AddMemberForm";
 import UploadCSV from "./components/Layouts/UploadCSV";
 import Stats from "./components/Graphs/ClientGraphs/ClientStats";
 
