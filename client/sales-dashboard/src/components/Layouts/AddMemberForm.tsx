@@ -302,7 +302,7 @@ const Layout1 = () => {
             <input
               type="text"
               id="accidents"
-              name="weight"
+              name="accidents"
               value={formData.accidents}
               onChange={handleChange}
               required

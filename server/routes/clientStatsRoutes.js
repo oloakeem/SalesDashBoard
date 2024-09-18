@@ -14,7 +14,7 @@ const getClientsByDateRange = async (days) => {
   };
   
   // Endpoint for clients in the last 7 days
-  app.get('/clients-stats/last7days', async (req, res) => {
+  router.get('/clients-stats/last7days', async (req, res) => {
     try {
       const count = await getClientsByDateRange(7);
       res.json({ count });
@@ -24,7 +24,7 @@ const getClientsByDateRange = async (days) => {
   });
   
   // Endpoint for clients in the last 30 days
-  app.get('/clients-stats/last30days', async (req, res) => {
+  router.get('/clients-stats/last30days', async (req, res) => {
     try {
       const count = await getClientsByDateRange(30);
       res.json({ count });
@@ -34,7 +34,7 @@ const getClientsByDateRange = async (days) => {
   });
   
   // Endpoint for clients in the last 365 days
-  app.get('/clients-stats/last365days', async (req, res) => {
+  router.get('/clients-stats/last365days', async (req, res) => {
     try {
       const count = await getClientsByDateRange(365);
       res.json({ count });

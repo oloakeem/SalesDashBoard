@@ -12,6 +12,7 @@ import {
   CategoryScale,
   LinearScale,
   PointElement,
+  Filler,
 } from "chart.js";
 
 // Register Chart.js components
@@ -22,7 +23,8 @@ ChartJS.register(
   LineElement,
   CategoryScale,
   LinearScale,
-  PointElement
+  PointElement,
+  Filler
 );
 
 const ClientStats: React.FC = () => {
@@ -43,14 +45,17 @@ const ClientStats: React.FC = () => {
 
   const fetchCount = async (days: number) => {
     try {
-      const response = await axios.get(`/api/clients-stats/last${days}days`);
+      const response = await axios.get(
+        `http://localhost:4000/api/clients-stats/last${days}days`
+      ); // Adjust backend port if needed
+      console.log(response.data);
       // Assuming the response contains labels and counts for the chart
       setChartData({
         labels: response.data.labels, // Array of labels (e.g., dates)
         datasets: [
           {
             label: `Clients in the last ${days} Days`,
-            data: response.data.counts, // Array of counts
+            data: response.data, // Array of counts
             backgroundColor: "rgba(75, 192, 192, 0.2)",
             borderColor: "rgba(75, 192, 192, 1)",
             borderWidth: 2,
