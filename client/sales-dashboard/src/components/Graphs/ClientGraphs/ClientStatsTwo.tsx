@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import axios from "axios";
-import ClientStatsTwo from "./ClientStatsTwo";
 import {
   Chart as ChartJS,
   Title,
@@ -26,7 +25,7 @@ ChartJS.register(
   Filler
 );
 
-const ClientStats: React.FC = () => {
+const ClientStatsTwo: React.FC = () => {
   const [selectedPeriod] = useOutletContext<[number]>();
   const [chartData, setChartData] = useState({
     labels: [],
@@ -71,13 +70,12 @@ const ClientStats: React.FC = () => {
 
   return (
     <div>
-      <h3 className="graphGroupH2">Client Statistics</h3>
+      <h3 className="graphGroupH2">Client sample</h3>
       <div className="bar-container">
         <Line data={chartData} />
       </div>
-      <ClientStatsTwo />
     </div>
   );
 };
 
-export default ClientStats;
+export default ClientStatsTwo;

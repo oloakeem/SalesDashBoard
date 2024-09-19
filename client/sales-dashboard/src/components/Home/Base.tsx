@@ -1,19 +1,17 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, Outlet } from "react-router-dom";
 import styles from "./Base.module.css";
-import { useState } from "react";
-import axios from "axios";
 import hamburger from "../../assets/hamburger-menu-svgrepo-com.svg";
 import addUser from "../../assets/add-user-svgrepo-com.svg";
 import addMultiple from "../../assets/add-user-svgrepo-com (1).svg";
 import viewUsers from "../../assets/team-svgrepo-com.svg";
 import viewGraphs from "../../assets/graphs-svgrepo-com.svg";
 import CLogo from "../../assets/bar-chart-svgrepo-com.svg";
-import { Outlet } from "react-router-dom"; // Import Outlet for nested routes
 
-const Base = () => {
+const Base: React.FC = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedPeriod, setSelectedPeriod] = useState<number>(7);
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
@@ -27,15 +25,34 @@ const Base = () => {
     setIsOpen(!isOpen);
   };
 
+  const handlePeriodChange = (days: number) => {
+    setSelectedPeriod(days);
+  };
+
   return (
     <div className={styles.baseBody}>
       <div className={styles.baseGridLayout}>
         <div className={styles.box1}>
           <h2>Company Name</h2>
           <div>
-            <button>Last 7 Days</button>
-            <button>Last 30 Days</button>
-            <button>Last 365 Days</button>
+            <button
+              className={styles.dateBtn}
+              onClick={() => handlePeriodChange(7)}
+            >
+              7 days
+            </button>
+            <button
+              className={styles.dateBtn}
+              onClick={() => handlePeriodChange(30)}
+            >
+              30 days
+            </button>
+            <button
+              className={styles.dateBtn}
+              onClick={() => handlePeriodChange(365)}
+            >
+              12 months
+            </button>
           </div>
           <img
             className={styles.hamBurgerMenu}
@@ -72,7 +89,7 @@ const Base = () => {
                 src={viewUsers}
                 alt="View Users"
               />
-              View Clients
+              <Link to="view-clients">View Clients </Link>
             </li>
             <li onClick={toggleSublist}>
               <img
@@ -102,8 +119,7 @@ const Base = () => {
           </ul>
         </div>
         <div className={styles.box3}>
-          {/* Render different layouts based on route */}
-          <Outlet />
+          <Outlet context={[selectedPeriod]} />
         </div>
       </div>
     </div>
