@@ -9,13 +9,20 @@ import viewGraphs from "../../assets/graphs-svgrepo-com.svg";
 import CLogo from "../../assets/bar-chart-svgrepo-com.svg";
 import Modal from "../Modal/Modal"; // Import the Modal component
 import FileUpload from "../Layouts/UploadCSV"; // Import FileUpload component
-import ViewClient from "../Layouts/ViewClient"; // Import FileUpload component
+import { useLocation } from "react-router-dom";
+interface LocationState {
+  userId: string;
+  userName: string;
+}
 
 const Base: React.FC = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedPeriod, setSelectedPeriod] = useState<number>(7);
-  const [isModalOpen, setModalOpen] = useState(false); // State to control modal visibility
+  const [isModalOpen, setModalOpen] = useState(false);
+  const location = useLocation(); // TypeScript will not know what properties exist on 'state' by default
+
+  const { userName } = (location.state as LocationState) || {}; // Retrieve userId from route state
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
@@ -48,7 +55,7 @@ const Base: React.FC = () => {
           <div className={styles.userInfo}>
             <img className={styles.navImages} src={CLogo} alt="" />
             <div className={styles.textContent}>
-              <h4>Welcome Akeem Olokun!</h4>
+              <h4>Welcome User {userName}</h4>
               <p>March 27th, 2024</p>
             </div>
           </div>

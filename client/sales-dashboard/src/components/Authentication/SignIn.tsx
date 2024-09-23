@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import styles from "./SignIn.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
 import CLogo from "../../assets/bar-chart-svgrepo-com.svg";
 import backImage from "../../assets/pexels-artempodrez-5716042 (2).jpg";
 import headerImage from "../../assets/picsvg_download.svg";
@@ -9,6 +9,7 @@ import headerImage from "../../assets/picsvg_download.svg";
 const SignIn = () => {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,6 +36,10 @@ const SignIn = () => {
         throw new Error(data.message || "Failed to log in");
       }
       console.log("Login successful!", data);
+      // Navigate to the dashboard or any route, passing userId in the state
+      navigate("/home", {
+        state: { userId: data.userId, userName: data.userName },
+      });
     } catch (error) {
       console.error("Error logging in:", error);
       alert("Failed to Login");

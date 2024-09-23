@@ -13,15 +13,15 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />}>
+        <Route path="/" element={<SignIn />} />
+        <Route path="/home" element={<Home />}>
           {/* Nested routes will render inside box3 */}
           <Route path="layout1" element={<Layout1 />} />
           <Route path="UploadCSV" element={<UploadCSV />} />
-          <Route path="/clients-stats" element={<Stats />} />
-          <Route path="/view-clients" element={<ClientTable />} />
+          <Route path="clients-stats" element={<Stats />} />
+          <Route path="view-clients" element={<ClientTable />} />
         </Route>
-        <Route path="/SignUp" element={<SignUp />} />
-        <Route path="/SignIn" element={<SignIn />} />
+        <Route path="/SignUp" element={<SignUp />}></Route>
       </Routes>
     </Router>
   );

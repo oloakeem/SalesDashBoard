@@ -103,7 +103,7 @@ const SignUp = () => {
             </button>
             <div className={styles.formGroup}>
               <p className={styles.GoToSignIn}>
-                Already have an account?. <Link to="/SignIn">Log in Here</Link>
+                Already have an account?. <Link to="/">Log in Here</Link>
               </p>
             </div>
           </form>

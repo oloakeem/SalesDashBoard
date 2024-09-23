@@ -2,7 +2,9 @@ const express = require('express')
 const router = express.Router()
 const User = require('../models/Users')
 const bcrypt = require('bcrypt')
+require('dotenv').config(); // Load environment variables
 
+const jwt = require('jsonwebtoken'); 
 //Post
 router.post('/', async (req, res) => {
     try {
@@ -44,8 +46,13 @@ router.post('/login', async (req, res) => {
             return res.status(400).json({ message: 'Invalid credentials' });
         }
 
-        // Optionally, you could generate a JWT token here for session management (for example, using `jsonwebtoken`)
-        res.status(200).json({ message: 'Login successful', userId: user._id });
+ // Generate a JWT token
+ const token = jwt.sign(
+    { userId: user._id, username: user.username },  // Payload (can contain user details)
+    process.env.ACCESS_TOKEN_SECRET,  // Secret key (stored in environment variable)
+    { expiresIn: '1h' }  // Token expiration time (optional)
+);
+        res.status(200).json({ message: 'Login successful', token, userId: user._id, userName: user.username });
 
     } catch (error) {
         res.status(500).json({ message: error.message });
