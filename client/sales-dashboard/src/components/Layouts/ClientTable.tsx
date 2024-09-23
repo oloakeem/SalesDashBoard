@@ -1,5 +1,8 @@
-// ClientTable.tsx
 import React, { useEffect, useState } from "react";
+import styles from "./ClientTable.module.css";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+import Modal from "../Modal/Modal"; // Import the Modal component
+import ViewClient from "../Layouts/ViewClient"; // Import ViewClient component
 
 // Define TypeScript types directly in this file
 interface Client {
@@ -12,6 +15,8 @@ interface Client {
 
 const ClientTable: React.FC = () => {
   const [clients, setClients] = useState<Client[]>([]);
+  const [isModalOpen, setModalOpen] = useState(false); // State to control modal visibility
+  const [selectedClientId, setSelectedClientId] = useState<string | null>(null); // State to store selected client ID
 
   useEffect(() => {
     // Fetch client data from the server
@@ -21,38 +26,56 @@ const ClientTable: React.FC = () => {
       .catch((error) => console.error("Error fetching client data:", error));
   }, []);
 
-  const handleButtonClick = (clientId: string) => {
-    // Handle button click for the specific client
-    alert(`Button clicked for client ID: ${clientId}`);
+  const openModal = (clientId: string) => {
+    setSelectedClientId(clientId); // Set the selected client ID
+    setModalOpen(true); // Open modal
+  };
+
+  const closeModal = () => {
+    setModalOpen(false); // Close modal
+    setSelectedClientId(null); // Reset selected client ID
   };
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Name / ID</th>
-          <th>Email / Phone</th>
-          <th>Membership Type</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        {clients.map((client) => (
-          <tr key={client._id}>
-            <td>{client.name}</td>
-            <td>
-              {client.email} / {client.phone}
-            </td>
-            <td>{client.membershipType}</td>
-            <td>
-              <button onClick={() => handleButtonClick(client._id)}>
-                Action
-              </button>
-            </td>
+    <>
+      <table>
+        <thead className={styles.tHeadStyle}>
+          <tr>
+            <th>Name / ID</th>
+            <th>Email / Phone</th>
+            <th>Membership Type</th>
+            <th>Action</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {clients.map((client) => (
+            <tr className={styles.clientItem} key={client._id}>
+              <td>{client.name}</td>
+              <td>
+                {client.email} / {client.phone}
+              </td>
+              <td>{client.membershipType}</td>
+              <td>
+                <button
+                  className={styles.orangebtn}
+                  onClick={() => openModal(client._id)} // Pass the client ID to openModal
+                >
+                  View/Edit
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      {/* Render Modal outside the map to keep it separate */}
+      {isModalOpen && (
+        <Modal isOpen={isModalOpen} closeModal={closeModal}>
+          <ViewClient clientId={selectedClientId} />
+          {/* Pass selected client ID */}
+        </Modal>
+      )}
+    </>
   );
 };
 

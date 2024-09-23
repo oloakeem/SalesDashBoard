@@ -7,11 +7,40 @@ import backImage from "../../assets/pexels-artempodrez-5716042 (2).jpg";
 import headerImage from "../../assets/picsvg_download.svg";
 
 const SignIn = () => {
-  const [userName, setUserName] = useState("");
+  const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const handleSubmit = async (event: React.FormEvent) => {
-    event.preventDefault();
+
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const loginData = {
+      username,
+      password,
+    };
+    console.log("Login data:", loginData);
+
+    try {
+      // Send login request to the server
+      const response = await fetch("http://localhost:4000/api/Users/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(loginData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Failed to log in");
+      }
+      console.log("Login successful!", data);
+    } catch (error) {
+      console.error("Error logging in:", error);
+      alert("Failed to Login");
+    }
   };
+
   return (
     <>
       <div className={styles.AuthGrid}>
@@ -27,15 +56,15 @@ const SignIn = () => {
             <h2>Company Name</h2>
           </div>
 
-          <form className={styles.SignInForm} onSubmit={handleSubmit}>
+          <form className={styles.SignInForm} onSubmit={handleLogin}>
             <h3>Login in.</h3>
 
             <div className={styles.formGroupSignIn}>
-              <label htmlFor="userNameInput">Username</label>
+              <label htmlFor="usernameInput">Username</label>
               <input
                 type="username"
                 placeholder="Username"
-                value={userName}
+                value={username}
                 id="userNameInput"
                 onChange={(e) => setUserName(e.target.value)}
                 required

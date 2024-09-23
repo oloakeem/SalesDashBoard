@@ -34,14 +34,29 @@
   /* Home Page Content */
   .box1 {
     grid-area: menu;
-    padding: 20px;
     transition: transform 0.5s ease;
     z-index: 1;
     position: relative;
     display: flex;
-    justify-content: space-between;
-    height: 150px;
+    justify-content: center;
+    max-height: 100px;
+    border-bottom:  1px solid rgb(195, 195, 195);
   }
+  .userInfo{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+  }
+
+  .textContent h4,
+  .textContent p {
+      margin: 0;              /* Remove margin from both h4 and p */
+  }
+  .textContent {
+    display: flex;
+    flex-direction: column; /* Stack h4 and p vertically */
+    align-items: flex-start; /* Align h4 and p to the left */
+}
   .hamBurgerMenu{
     width: 35px;
     height: 35px;
@@ -73,6 +88,8 @@
   .box3{
     grid-area: "content";
     overflow-y: auto;
+    padding: 10px;
+
   }
   .graphGroup{
       width: 100%;
@@ -113,8 +130,8 @@
   }
 
    .navImages{
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     margin-right: 5px;
    }
    .navHeader{
@@ -143,7 +160,6 @@
 
   .box1 {
     grid-area: info;
-    padding: 20px;
     z-index: 1;
     display: flex;
     justify-content: space-between;
@@ -175,7 +191,8 @@
 
    @media only screen and (min-width: 768px) {
     .box2{
-      width: 60%; /* Let it take full width of its grid area */
+      width: 80%; /* Let it take full width of its grid area */
+      margin: 0 auto;
 
     }
     /* For desktop: */   

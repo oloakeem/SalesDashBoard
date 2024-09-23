@@ -26,9 +26,19 @@ router.get('', async(req,res)=>{
     }
     
 })
-router.get('/:id', async(req,res)=>{
-    
-})
+router.get('/:id', async (req, res) => {
+    try {
+        // Use req.params.id to get the client by ID from the URL
+        const client = await Client.findById(req.params.id); 
+        if (!client) {
+            return res.status(404).json({ message: "Client not found" });
+        }
+        res.status(200).json(client); // Send the client data as JSON        
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+});
+
 router.put(':id', async(req,res)=>{
     
 })
