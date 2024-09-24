@@ -38,7 +38,13 @@ Welcome to the **Sales Dashboard App**! This web-based application is designed t
 ### Database
 - **MongoDB** for storing sales data and client information
 ---
-## 💿 Demos
+## 📈 Usage
+- **Admin Users**
+Manage client information and view comprehensive sales metrics.
+- **Regular Users**
+Access and interact with sales data without management privileges.
+---
+## 🖼️ Screenshots
 
 ### Sign In/ Log In
 ![image](https://github.com/user-attachments/assets/1e7d4261-3f2c-49df-8253-0ce6a3a5bcdc)
@@ -48,5 +54,6 @@ Welcome to the **Sales Dashboard App**! This web-based application is designed t
 ![image](https://github.com/user-attachments/assets/13633a9d-2975-4976-9808-bf425f7f0d5c)
 ![image](https://github.com/user-attachments/assets/342bfea8-33aa-49e3-9cb1-2da3d7813876)
 ![image](https://github.com/user-attachments/assets/618d592b-b461-4893-951d-b0d0f9ac14a6)
-
+---
+## Live Demo
 
