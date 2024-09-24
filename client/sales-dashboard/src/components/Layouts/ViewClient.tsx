@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom"; // To get the client ID from the URL
 
 interface Client {
   name: string;
@@ -38,8 +37,13 @@ const ViewClient: React.FC<ViewClientProps> = ({ clientId }) => {
     // Fetch client by ID when component mounts
     const fetchClient = async () => {
       try {
+        const token = localStorage.getItem("token");
+
         const response = await axios.get(
-          `http://localhost:4000/api/Clients/${clientId}`
+          `http://localhost:4000/api/Clients/${clientId}`,
+          {
+            withCredentials: true, // Ensures cookies are included in the request
+          }
         );
         setClient(response.data); // Set the client data
       } catch (error) {

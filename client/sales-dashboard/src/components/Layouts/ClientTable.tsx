@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import styles from "./ClientTable.module.css";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
 import Modal from "../Modal/Modal"; // Import the Modal component
 import ViewClient from "../Layouts/ViewClient"; // Import ViewClient component
 
@@ -20,7 +19,10 @@ const ClientTable: React.FC = () => {
 
   useEffect(() => {
     // Fetch client data from the server
-    fetch("http://localhost:4000/api/Clients")
+    fetch("http://localhost:4000/api/Clients", {
+      method: "GET",
+      credentials: "include", // This ensures cookies are sent with the request
+    })
       .then((response) => response.json())
       .then((data: Client[]) => setClients(data))
       .catch((error) => console.error("Error fetching client data:", error));

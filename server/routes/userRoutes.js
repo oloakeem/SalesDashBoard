@@ -46,18 +46,30 @@ router.post('/login', async (req, res) => {
             return res.status(400).json({ message: 'Invalid credentials' });
         }
 
- // Generate a JWT token
- const token = jwt.sign(
+    // Generate a JWT token
+    const token = jwt.sign(
     { userId: user._id, username: user.username },  // Payload (can contain user details)
     process.env.ACCESS_TOKEN_SECRET,  // Secret key (stored in environment variable)
     { expiresIn: '1h' }  // Token expiration time (optional)
 );
-        res.status(200).json({ message: 'Login successful', token, userId: user._id, userName: user.username });
+    // Set token in a cookie
+    res.cookie('authToken', token, {
+    httpOnly: true, // Makes the cookie inaccessible via JavaScript (more secure)
+    secure:false,
+    maxAge: 3600000, // Cookie expiry time (in milliseconds) - 1 hour in this case
+    sameSite: 'strict', // Helps prevent CSRF attacks
+  });
+        res.status(200).json({ message: 'Login successful', userId: user._id, userName: user.username });
 
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 });
+router.post('/logout', (req, res) => {
+    // Clear the auth cookie
+    res.clearCookie('authToken');
+    res.status(200).json({ message: 'Logged out successfully' });
+  });
 //Get
 router.get('', async(req,res)=>{
     try {

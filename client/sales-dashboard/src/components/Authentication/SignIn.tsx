@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import axios from "axios";
+
 import styles from "./SignIn.module.css";
 import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
 import CLogo from "../../assets/bar-chart-svgrepo-com.svg";
@@ -21,24 +23,20 @@ const SignIn = () => {
     console.log("Login data:", loginData);
 
     try {
-      // Send login request to the server
-      const response = await fetch("http://localhost:4000/api/Users/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(loginData),
-      });
+      const response = await axios.post(
+        "http://localhost:4000/api/Users/login",
+        loginData,
+        {
+          withCredentials: true, // Ensure credentials (cookies) are included
+        }
+      );
 
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || "Failed to log in");
-      }
-      console.log("Login successful!", data);
-      // Navigate to the dashboard or any route, passing userId in the state
+      console.log("Login successful!", response.data);
       navigate("/home", {
-        state: { userId: data.userId, userName: data.userName },
+        state: {
+          userId: response.data.userId,
+          userName: response.data.userName,
+        },
       });
     } catch (error) {
       console.error("Error logging in:", error);

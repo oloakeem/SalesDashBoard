@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
+import axios from "axios";
 import styles from "./Base.module.css";
 import hamburger from "../../assets/hamburger-menu-svgrepo-com.svg";
 import addUser from "../../assets/add-user-svgrepo-com.svg";
@@ -47,7 +48,21 @@ const Base: React.FC = () => {
   const closeModal = () => {
     setModalOpen(false); // Close modal
   };
-
+  const handleSignOut = async () => {
+    try {
+      await axios.post(
+        "http://localhost:4000/api/Users/logout",
+        {},
+        {
+          withCredentials: true, // Include credentials (cookies)
+        }
+      );
+      localStorage.removeItem("user"); // Clear user data
+      window.location.href = "http://localhost:5173/"; // Redirect to login page
+    } catch (error) {
+      console.error("Error signing out:", error);
+    }
+  };
   return (
     <div className={styles.baseBody}>
       <div className={styles.baseGridLayout}>
@@ -144,6 +159,7 @@ const Base: React.FC = () => {
             )}
             <div className={styles.lineBreak}></div>
           </ul>
+          <button onClick={handleSignOut}>Sign Out</button>
         </div>
         <div className={styles.box3}>
           <Outlet context={[selectedPeriod]} />
