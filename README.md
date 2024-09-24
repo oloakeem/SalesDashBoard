@@ -41,4 +41,10 @@ Welcome to the **Sales Dashboard App**! This web-based application is designed t
 ## 💿 Demos
 
 ### Sign In/ Log In
+![image](https://github.com/user-attachments/assets/1e7d4261-3f2c-49df-8253-0ce6a3a5bcdc)
+![image](https://github.com/user-attachments/assets/7d6c1f50-b0e8-4821-83f3-539df4ba7c69)
+
+### Home 
+![image](https://github.com/user-attachments/assets/13633a9d-2975-4976-9808-bf425f7f0d5c)
+![image](https://github.com/user-attachments/assets/342bfea8-33aa-49e3-9cb1-2da3d7813876)
 
