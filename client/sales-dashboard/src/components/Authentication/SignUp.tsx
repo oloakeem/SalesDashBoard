@@ -50,12 +50,8 @@ const SignUp = () => {
     <>
       <div className={styles.AuthGrid}>
         <div className={styles.secionA}>
-          <div className={styles.CNames}>
-            <img src={CLogo} alt="CompanyLogo" />
-            <h3>Company Name</h3>
-          </div>
           <form className={styles.SignUpForm} onSubmit={handleSubmit}>
-            <h2>Create an account</h2>
+            <h2>Sign up here!</h2>
 
             <div className={styles.formGroup}>
               <label htmlFor="userNameInput">Username</label>
@@ -109,9 +105,14 @@ const SignUp = () => {
           </form>
         </div>
         <div className={styles.secionB}>
-          <img className={styles.headerImageSignUp} src={headerImage} alt="" />
-
-          <img className={styles.backImageSignUp} src={backImage} alt="" />
+          <div className={styles.logoInfo}>
+            <h2>Sales & Finance</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Voluptatem, delectus.
+            </p>
+            <button>Read more</button>
+          </div>
         </div>
       </div>
     </>

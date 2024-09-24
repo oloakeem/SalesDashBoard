@@ -10,15 +10,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-}
-.CNames{
-    display: flex;
-    align-items: center; /* Aligns the image and text vertically in the center */
-}
-.CNames img{
-    width: 24px;
-    height: 24px;
-    margin-right: 5px;
+    justify-content: center;
 }
 
 .SignInForm{
@@ -26,28 +18,32 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin-top: 20%;
 }
 .SignInForm label{
     font-weight: bold;
 }
 .SignInForm input{
-    height: 18px;
     border-radius: 16px;
     border: 1px solid gray;
     padding: 6px;
     margin-bottom: .5rem;
+    
 }
 .formGroupSignIn{
     display: flex;
     flex-direction: column;
     width: 70%;
+    height: 100%;
+}
+.AuthenInput {
+    height: 50px; /* Set your desired height here */
+    padding: 20px;
 }
 
 .SignUpBtn{
     width: 60%;
     border-radius: 16px;
-    background-color: black;
+    background-color: #4B6B9A;
     color: white;
     padding: 5px;
     border: none;
@@ -57,29 +53,35 @@ align-self: center;
 }
 .secionB{
     grid-row: 2;
-    background-color: rgba(229, 229, 229, 0.267);
-    margin: 3%;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to top, #1D2856, #4B6B9A);
     border-radius: 2%;
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
     position: relative;
     overflow: hidden;
     height: 300px;
 
 }
-.backImageSignUp{
-    position: absolute;
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%);
-    border: 15px solid black;
+.logoInfo{
+    text-align: left;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.logoInfo button{
+    width: 35px;
+    width: 135px;
     border-radius: 16px;
-    max-width: 100%; 
-    height: auto; 
+    background-color: #4B6B9A;
+    color: white;
+    padding: 5px;
+    border: none;
 }
-.headerImageSignUp{
-    display: none;
 
-
-}
 
 @media only screen and (min-width: 600px) {
     /* For tablets: */
@@ -96,30 +98,7 @@ align-self: center;
 
 
     }
-    .backImageSignUp{
-        position: absolute;
-        top:auto;
-        left: auto;
-        bottom: -1%; /* Aligns to the bottom of the parent container */
-        left: -20%; /* Aligns to the left edge of the parent container */
-        width: 100%; /* Optional, to stretch across the width */
-        height: auto; /* Maintains aspect ratio */
-        border: 15px solid black;
-        min-height: 75%; /* Minimum height for the image */
 
-        border-radius: 16px;
-        transform: none; /* Adjusts for the image's own dimensions */
-        aspect-ratio: 16 / 9; /* or any other ratio */
-    }
-
-    .headerImageSignUp{
-        display: block;
-        position: absolute;
-        top:0;
-        left: 0;
-        transform: rotate(350deg); /* Rotates the element 45 degrees */
-    
-    }
     .SignInForm input{
         height: 20px;
         border-radius: 20px;
@@ -142,13 +121,5 @@ align-self: center;
     grid-row: 1;
 
 }
-.backImageSignUp{
-    bottom: -1%; /* Aligns to the bottom of the parent container */
-    left: -15%; /* Aligns to the left edge of the parent container */
-}
-.headerImageSignUp{
-    left: 10%;
-}
-
 
 }

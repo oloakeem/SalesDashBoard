@@ -4,9 +4,6 @@ import axios from "axios";
 
 import styles from "./SignIn.module.css";
 import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
-import CLogo from "../../assets/bar-chart-svgrepo-com.svg";
-import backImage from "../../assets/pexels-artempodrez-5716042 (2).jpg";
-import headerImage from "../../assets/picsvg_download.svg";
 
 const SignIn = () => {
   const [username, setUserName] = useState("");
@@ -48,23 +45,24 @@ const SignIn = () => {
     <>
       <div className={styles.AuthGrid}>
         <div className={styles.secionB}>
-          <img className={styles.headerImageSignUp} src={headerImage} alt="" />
-
-          <img className={styles.backImageSignUp} src={backImage} alt="" />
+          <div className={styles.logoInfo}>
+            <h2>Sales & Finance</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Voluptatem, delectus.
+            </p>
+            <button>Read more</button>
+          </div>
         </div>
 
         <div className={styles.secionA}>
-          <div className={styles.CNames}>
-            <img src={CLogo} alt="CompanyLogo" />
-            <h2>Company Name</h2>
-          </div>
-
           <form className={styles.SignInForm} onSubmit={handleLogin}>
-            <h3>Login in.</h3>
+            <h2>Sign in here!</h2>
 
             <div className={styles.formGroupSignIn}>
               <label htmlFor="usernameInput">Username</label>
               <input
+                className={styles.AuthenInput}
                 type="username"
                 placeholder="Username"
                 value={username}

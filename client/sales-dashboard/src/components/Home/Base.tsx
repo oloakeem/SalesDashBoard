@@ -107,40 +107,19 @@ const Base: React.FC = () => {
           }`}
         >
           <div className={styles.navHeader}>
-            <img className={styles.navImages} src={CLogo} alt="Logo" />
             <h2>Navigation Menu</h2>
           </div>
           <ul className={styles.unOrderedListGroup}>
             <li onClick={closeNav}>
-              <img
-                className={styles.navImages}
-                src={addMultiple}
-                alt="Add Multiple"
-              />
               <Link to="layout1">Add Client</Link>
             </li>
 
-            <li onClick={openModal}>
-              <img className={styles.navImages} src={addUser} alt="Add User" />
-              Add Group
-            </li>
+            <li onClick={openModal}>Add Group</li>
 
             <li onClick={closeNav}>
-              <img
-                className={styles.navImages}
-                src={viewUsers}
-                alt="View Users"
-              />
               <Link to="view-clients">View Clients </Link>
             </li>
-            <li onClick={toggleSublist}>
-              <img
-                className={styles.navImages}
-                src={viewGraphs}
-                alt="View Graphs"
-              />
-              Analysis
-            </li>
+            <li onClick={toggleSublist}>Analysis</li>
             {isOpen && (
               <ul className={styles.sublist}>
                 <li>
@@ -159,7 +138,9 @@ const Base: React.FC = () => {
             )}
             <div className={styles.lineBreak}></div>
           </ul>
-          <button onClick={handleSignOut}>Sign Out</button>
+          <button className={styles.signOutBtn} onClick={handleSignOut}>
+            Sign Out
+          </button>
         </div>
         <div className={styles.box3}>
           <Outlet context={[selectedPeriod]} />

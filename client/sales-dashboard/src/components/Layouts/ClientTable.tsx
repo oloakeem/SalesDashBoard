@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./ClientTable.module.css";
 import Modal from "../Modal/Modal"; // Import the Modal component
 import ViewClient from "../Layouts/ViewClient"; // Import ViewClient component
+import pencilImg from "../../assets/edit-svgrepo-com.svg";
 
 // Define TypeScript types directly in this file
 interface Client {
@@ -62,7 +63,7 @@ const ClientTable: React.FC = () => {
                   className={styles.orangebtn}
                   onClick={() => openModal(client._id)} // Pass the client ID to openModal
                 >
-                  View/Edit
+                  <img src={pencilImg} alt="" />
                 </button>
               </td>
             </tr>

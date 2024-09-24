@@ -1,7 +1,11 @@
-body {
+
+  html, body {
+    height: 100%; /* Ensure html and body take up full height */
+    margin: 0; /* Remove default margins */
+    overflow: hidden; /* Prevent scrolling */
     font-family: 'Roboto', sans-serif; /* Example using the 'Roboto' font */
-  }
-  
+
+}
   .graphGroupH2 {
     background-color: #f2f2f2; /* Light background for contrast */
     border: 1px solid  rgb(195, 195, 195);

@@ -3,28 +3,25 @@
     grid-template-columns: repeat(1,1fr);
     height: 100vh;
     width: 100vw;
+    overflow: hidden; /* Prevent scrolling */
+
 }
 
 .secionA{
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: 100%;
+    justify-content: center;
 }
-.CNames{
-    display: flex;
-    align-items: center; /* Aligns the image and text vertically in the center */
-}
-.CNames img{
-    width: 35px;
-    height: 35px;
-    margin-right: 10px;
-}
+
 
 .SignUpForm{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+
     
 }
 .SignUpForm label{
@@ -46,7 +43,7 @@
 .SignInBtn{
     width: 80%;
     border-radius: 16px;
-    background-color: black;
+    background-color: #4B6B9A;
     color: white;
     padding: 5px;
     border: none;
@@ -55,12 +52,32 @@
 align-self: center;
 }
 .secionB{
-    background-color: rgba(229, 229, 229, 0.267);
-    margin: 3%;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to top, #1D2856, #4B6B9A);
     border-radius: 2%;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
     position: relative;
     overflow: hidden;
     height: 300px;
+}
+.logoInfo{
+    text-align: left;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+.logoInfo button{
+    width: 35px;
+    width: 135px;
+    border-radius: 16px;
+    background-color: #4B6B9A;
+    color: white;
+    padding: 5px;
+    border: none;
 }
 .backImageSignUp{
     position: absolute;
@@ -83,9 +100,6 @@ align-self: center;
     /* For tablets: */
     .AuthGrid{
         grid-template-columns: .4fr .6fr;
-    }
-    .SignUpForm{
-        margin-top: 25%;
     }
     .secionB{
         height: 100%;
@@ -127,11 +141,9 @@ align-self: center;
 @media only screen and (min-width: 768px) {
       /* For desktop: */
 .AuthGrid{
-    grid-template-columns: .3fr .7fr;
+    grid-template-columns: .4fr .6fr;
 }
-.SignUpForm{
-    margin-top: 25%;
-}
+
 .secionB{
     height: 100%;
 }
