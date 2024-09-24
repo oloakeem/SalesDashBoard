@@ -2,6 +2,9 @@
 
 Welcome to the **Sales Dashboard App**! This web-based application is designed to empower businesses by providing a comprehensive platform for tracking and analyzing sales performance. With an intuitive interface, users can visualize their sales data and manage client relationships effectively.
 
+# Current Status
+This project is currently in production. While the core functionalities are implemented, I am actively working on enhancements and additional features based on user feedback. My goal is to refine the user experience and improve performance while expanding the application's capabilities.
+
 ---
 
 ## 🏆 Key Features
