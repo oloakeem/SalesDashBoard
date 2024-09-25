@@ -56,7 +56,7 @@ Access and interact with sales data without management privileges.
 ### Home 
 ![image](https://github.com/user-attachments/assets/13633a9d-2975-4976-9808-bf425f7f0d5c)
 ![image](https://github.com/user-attachments/assets/342bfea8-33aa-49e3-9cb1-2da3d7813876)
-![image](https://github.com/user-attachments/assets/618d592b-b461-4893-951d-b0d0f9ac14a6)
+![image](https://github.com/user-attachments/assets/3ab48c16-e19c-4ed3-b13a-3c01ebb4ecb1)
 ---
 ## Live Demo
 
