@@ -52,7 +52,7 @@
 align-self: center;
 }
 .secionB{
-    display: flex;
+    display: none;
     justify-content: center;
     background: linear-gradient(to top, #1D2856, #4B6B9A);
     border-radius: 2%;
@@ -102,6 +102,7 @@ align-self: center;
         grid-template-columns: .4fr .6fr;
     }
     .secionB{
+        display: flex;
         height: 100%;
     }
     .backImageSignUp{

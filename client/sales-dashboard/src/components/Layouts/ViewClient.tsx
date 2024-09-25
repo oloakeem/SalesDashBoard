@@ -98,32 +98,32 @@ const ViewClient: React.FC<ViewClientProps> = ({ clientId }) => {
       <h3>Target Goals</h3>
       <ul>
         <li>
-          <strong>Yoga:</strong> {client.targetGoals.yoga ? "Yes" : "No"}
+          <strong>Yoga:</strong> {client.targetGoals.yoga}
         </li>
         <li>
           <strong>Cardio:</strong> {client.targetGoals.cardio ? "Yes" : "No"}
         </li>
         <li>
-          <strong>Aerobics:</strong>{" "}
+          <strong>Aerobics:</strong>
           {client.targetGoals.aerobics ? "Yes" : "No"}
         </li>
         <li>
-          <strong>Physical Fitness:</strong>{" "}
+          <strong>Physical Fitness:</strong>
           {client.targetGoals.physicalFitness ? "Yes" : "No"}
         </li>
         <li>
           <strong>Fat Loss:</strong> {client.targetGoals.fatLoss ? "Yes" : "No"}
         </li>
         <li>
-          <strong>Free Hand:</strong>{" "}
+          <strong>Free Hand:</strong>
           {client.targetGoals.freeHand ? "Yes" : "No"}
         </li>
         <li>
-          <strong>Muscle Building:</strong>{" "}
+          <strong>Muscle Building:</strong>
           {client.targetGoals.muscleBuilding ? "Yes" : "No"}
         </li>
         <li>
-          <strong>Endurance:</strong>{" "}
+          <strong>Endurance:</strong>
           {client.targetGoals.endurance ? "Yes" : "No"}
         </li>
       </ul>

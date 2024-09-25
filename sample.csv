@@ -1,55 +1,21 @@
-name,email,phone,membershipType,startDate,paymentMethod
-John Doe,john.doe@example.com,(555) 123-4567,1,2024-01-15,Visa
-Jane Smith,jane.smith@example.com,(555) 234-5678,2,2023-12-05,MasterCard
-Alice Johnson,alice.johnson@example.com,(555) 345-6789,3,2023-11-20,American Express
-Bob Brown,bob.brown@example.com,(555) 456-7890,1,2023-10-10,Discover
-Carol White,carol.white@example.com,(555) 567-8901,2,2023-09-25,Visa
-David Black,david.black@example.com,(555) 678-9012,3,2023-08-15,MasterCard
-Eva Green,eva.green@example.com,(555) 789-0123,1,2023-07-30,American Express
-Frank Blue,frank.blue@example.com,(555) 890-1234,2,2023-06-10,Discover
-Grace Lee,grace.lee@example.com,(555) 901-2345,3,2023-05-20,Visa
-Henry Adams,henry.adams@example.com,(555) 012-3456,1,2023-04-25,MasterCard
-Isla Martin,isla.martin@example.com,(555) 123-6789,2,2024-01-20,American Express
-Jack Lewis,jack.lewis@example.com,(555) 234-7890,3,2023-12-15,Discover
-Kara Wilson,kara.wilson@example.com,(555) 345-8901,1,2023-11-01,Visa
-Liam Clark,liam.clark@example.com,(555) 456-9012,2,2023-10-12,MasterCard
-Mia Allen,mia.allen@example.com,(555) 567-0123,3,2023-09-18,American Express
-Noah Young,noah.young@example.com,(555) 678-1234,1,2023-08-28,Discover
-Olivia Scott,olivia.scott@example.com,(555) 789-2345,2,2023-07-15,Visa
-Paul Harris,paul.harris@example.com,(555) 890-3456,3,2023-06-22,MasterCard
-Quinn Baker,quinn.baker@example.com,(555) 901-4567,1,2023-05-05,American Express
-Riley Collins,riley.collins@example.com,(555) 012-5678,2,2024-01-10,Discover
-Sophie Mitchell,sophie.mitchell@example.com,(555) 123-7890,3,2023-12-01,Visa
-Thomas Garcia,thomas.garcia@example.com,(555) 234-8901,1,2023-11-12,MasterCard
-Uma Patel,uma.patel@example.com,(555) 345-9012,2,2023-10-25,American Express
-Victor Brown,victor.brown@example.com,(555) 456-0123,3,2023-09-30,Discover
-Wendy Adams,wendy.adams@example.com,(555) 567-1234,1,2023-08-20,Visa
-Xander Taylor,xander.taylor@example.com,(555) 678-2345,2,2023-07-05,MasterCard
-Yara Rodriguez,yara.rodriguez@example.com,(555) 789-3456,3,2023-06-15,American Express
-Zachary Wilson,zachary.wilson@example.com,(555) 890-4567,1,2023-05-25,Discover
-Ava Martinez,ava.martinez@example.com,(555) 901-5678,2,2024-01-30,Visa
-Benjamin Taylor,benjamin.taylor@example.com,(555) 012-6789,3,2023-12-10,MasterCard
-Charlotte Lee,charlotte.lee@example.com,(555) 123-8901,1,2023-11-20,American Express
-Daniel Harris,daniel.harris@example.com,(555) 234-9012,2,2023-10-05,Discover
-Emily Clark,emily.clark@example.com,(555) 345-0123,3,2023-09-15,Visa
-Felix Robinson,felix.robinson@example.com,(555) 456-1234,1,2023-08-10,MasterCard
-Gina Roberts,gina.roberts@example.com,(555) 567-2345,2,2023-07-25,American Express
-Henry Martinez,henry.martinez@example.com,(555) 678-3456,3,2023-06-05,Discover
-Ivy Wright,ivy.wright@example.com,(555) 789-4567,1,2023-05-15,Visa
-Jackie Evans,jackie.evans@example.com,(555) 890-5678,2,2024-01-05,MasterCard
-Katherine Wilson,katherine.wilson@example.com,(555) 901-6789,3,2023-12-20,American Express
-Lucas Turner,lucas.turner@example.com,(555) 012-7890,1,2023-11-15,Discover
-Mason Allen,mason.allen@example.com,(555) 123-9012,2,2023-10-30,Visa
-Nora White,nora.white@example.com,(555) 234-0123,3,2023-09-05,MasterCard
-Oscar Harris,oscar.harris@example.com,(555) 345-1234,1,2023-08-25,American Express
-Penelope Scott,penelope.scott@example.com,(555) 456-2345,2,2023-07-10,Discover
-Quincy Young,quincy.young@example.com,(555) 567-3456,3,2023-06-20,Visa
-Riley Mitchell,riley.mitchell@example.com,(555) 678-4567,1,2023-05-10,MasterCard
-Stella Lee,stella.lee@example.com,(555) 789-5678,2,2024-01-25,American Express
-Travis Adams,travis.adams@example.com,(555) 890-6789,3,2023-12-25,Discover
-Uma Patel,uma.patel@example.com,(555) 901-7890,1,2023-11-30,Visa
-Victor Wright,victor.wright@example.com,(555) 012-8901,2,2023-10-15,MasterCard
-Wendy Martinez,wendy.martinez@example.com,(555) 123-0123,3,2023-09-10,American Express
-Xander Wilson,xander.wilson@example.com,(555) 234-1234,1,2023-08-05,Discover
-Yara Rodriguez,yara.rodriguez@example.com,(555) 345-2345,2,2024-01-15,Visa
-Zachary Lee,zachary.lee@example.com,(555) 456-3456,3,2023-12-05,MasterCard
+name,email,phone,address,height,weight,membershipType,startDate,paymentMethod,yoga,cardio,aerobics,physicalFitness,fatLoss,freeHand,muscleBuilding,endurance,surgeries,medication,accidents
+John Doe,john.doe1@example.com,123-456-7890,123 Fitness St,180 cm,75 kg,106,2024-09-25,Credit Card,true,false,true,true,false,false,true,true,Appendix surgery in 2020,None,Car accident in 2018
+Jane Smith,jane.smith2@example.com,987-654-3210,456 Wellness Ave,165 cm,68 kg,70,2023-08-14,Debit Card,false,true,false,true,true,false,false,true,None,None,None
+Alice Johnson,alice.johnson3@example.com,555-123-4567,789 Health Blvd,170 cm,65 kg,180,2024-06-12,PayPal,true,true,false,false,true,false,true,false,Knee surgery in 2021,Insulin,None
+Bob Brown,bob.brown4@example.com,555-987-6543,234 Workout Rd,175 cm,80 kg,106,2024-03-10,Cash,false,false,true,true,false,true,false,true,None,None,Back injury in 2019
+Emma Davis,emma.davis5@example.com,555-456-7890,567 Training Ln,160 cm,55 kg,70,2024-01-20,Credit Card,true,true,true,false,true,true,true,false,None,Antibiotics,Ankle sprain in 2020
+Michael Wilson,michael.wilson6@example.com,555-321-6540,890 Sport St,182 cm,90 kg,180,2024-02-15,Debit Card,false,false,false,true,false,false,false,true,None,None,Leg fracture in 2022
+Olivia Martinez,olivia.martinez7@example.com,555-654-3210,345 Fitness Dr,158 cm,52 kg,106,2024-07-30,Cash,true,true,false,true,true,false,true,false,Heart surgery in 2019,None,No accidents
+William Garcia,william.garcia8@example.com,555-789-0123,678 Exercise Ave,177 cm,78 kg,70,2024-05-05,Credit Card,false,true,true,false,false,true,false,true,None,High blood pressure,None
+Sophia Lopez,sophia.lopez9@example.com,555-123-4560,135 Active St,165 cm,64 kg,180,2024-08-22,PayPal,true,false,true,true,true,false,true,false,Appendectomy in 2020,None,No accidents
+James Wilson,james.wilson10@example.com,555-654-9870,246 Body Ln,190 cm,90 kg,106,2024-09-11,Cash,false,false,true,false,false,true,true,true,None,Cholesterol medication,No accidents
+Liam Martinez,liam.martinez11@example.com,555-987-1234,357 Strength St,170 cm,73 kg,70,2024-04-17,Credit Card,true,true,false,false,true,false,false,true,None,None,No accidents
+Isabella Anderson,isabella.anderson12@example.com,555-321-7890,468 Run Rd,168 cm,62 kg,180,2024-03-29,Debit Card,false,true,true,true,false,true,false,true,No surgeries,None,None
+Benjamin Thomas,benjamin.thomas13@example.com,555-654-2345,579 Fit St,175 cm,82 kg,106,2024-02-05,Cash,true,false,true,false,true,false,true,true,None,None,No accidents
+Mia Jackson,mia.jackson14@example.com,555-987-4560,680 Move Blvd,160 cm,50 kg,70,2024-06-15,Credit Card,false,true,false,true,true,false,true,false,No surgeries,None,Car accident in 2021
+Lucas White,lucas.white15@example.com,555-123-6789,791 Health St,185 cm,85 kg,180,2024-07-21,PayPal,true,false,true,false,true,true,false,true,None,None,No accidents
+Charlotte Harris,charlotte.harris16@example.com,555-456-7891,902 Workout Way,172 cm,70 kg,106,2024-09-15,Cash,false,true,true,true,false,true,false,false,None,Medication for anxiety,None
+Ethan Clark,ethan.clark17@example.com,555-678-9012,345 Training St,178 cm,76 kg,70,2024-08-10,Credit Card,true,false,false,false,true,true,false,true,Knee surgery in 2020,No medication,No accidents
+Amelia Lewis,amelia.lewis18@example.com,555-890-1234,789 Fit St,165 cm,57 kg,180,2024-01-18,Debit Card,false,true,true,true,true,false,false,true,None,Medication for pain,None
+Henry Walker,henry.walker19@example.com,555-234-5678,123 Exercise Ave,180 cm,85 kg,106,2024-06-25,Cash,true,false,true,false,true,true,false,false,No surgeries,None,None
+Ella Young,ella.young20@example.com,555-456-7892,456 Sport Blvd,175 cm,64 kg,70,2024-03-30,Credit Card,false,true,true,true,false,false,true,false,None,Medication for hypertension,None

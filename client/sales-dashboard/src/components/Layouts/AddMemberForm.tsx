@@ -68,6 +68,8 @@ const Layout1 = () => {
     try {
       const response = await fetch("http://localhost:4000/api/clients", {
         method: "POST",
+        credentials: "include", // This ensures cookies are sent with the request
+
         headers: {
           "Content-Type": "application/json",
         },

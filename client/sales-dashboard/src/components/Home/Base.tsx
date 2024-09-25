@@ -68,13 +68,12 @@ const Base: React.FC = () => {
       <div className={styles.baseGridLayout}>
         <div className={styles.box1}>
           <div className={styles.userInfo}>
-            <img className={styles.navImages} src={CLogo} alt="" />
             <div className={styles.textContent}>
               <h4>Welcome User {userName}</h4>
               <p>March 27th, 2024</p>
             </div>
           </div>
-          <div>
+          <div className={styles.dateBtnGroup}>
             <button
               className={styles.dateBtn}
               onClick={() => handlePeriodChange(7)}

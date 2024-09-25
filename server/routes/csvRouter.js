@@ -9,13 +9,29 @@ router.post('/upload-csv', async (req, res) => {
     const csvData = req.body.data;
     // Parse CSV data
     const parsedData = csvData.map(row => ({
-        name: row.name, // Adjust to match CSV column header for name
-        email: row.email, // Adjust to match CSV column header for email
-        phone: row.phone, // Adjust to match CSV column header for phone
-        membershipType: parseInt(row.membershipType, 10), // Convert to number
-        startDate: new Date(row.startDate), // Convert to Date object
-        paymentMethod: row.paymentMethod, // Adjust to match CSV column header for paymentMethod
-    }));
+      name: row.name, // Name
+      email: row.email, // Email
+      phone: row.phone, // Phone
+      address: row.address, // Address
+      height: row.height, // Height
+      weight: row.weight, // Weight
+      membershipType: parseInt(row.membershipType, 10), // Membership Type as a number
+      startDate: new Date(row.startDate), // Start Date as a Date object
+      paymentMethod: row.paymentMethod, // Payment Method
+      targetGoals: { // Group boolean fields into targetGoals object
+        yoga: row.yoga === 'true', // Convert to boolean
+        cardio: row.cardio === 'true', // Convert to boolean
+        aerobics: row.aerobics === 'true', // Convert to boolean
+        physicalFitness: row.physicalFitness === 'true', // Convert to boolean
+        fatLoss: row.fatLoss === 'true', // Convert to boolean
+        freeHand: row.freeHand === 'true', // Convert to boolean
+        muscleBuilding: row.muscleBuilding === 'true', // Convert to boolean
+        endurance: row.endurance === 'true', // Convert to boolean
+    },
+      surgeries: row.surgeries, // Surgeries
+      medication: row.medication, // Medication
+      accidents: row.accidents // Accidents
+  }));
     
     // Insert data into MongoDB
     await Data.insertMany(parsedData);
