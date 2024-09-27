@@ -18,7 +18,7 @@ const ClientSchema = mongoose.Schema({
     height:{type:String, required:true},
     weight:{type:String, required:true},
     membershipType:{type:Number, enum: [70,106,180], required:true},
-    startDate:{type:String, required:true},
+    startDate:{type:Date, required:true},
     paymentMethod:{type:String, required:true},
     targetGoals: targetGoalsSchema, // Nested schema for target goals
 

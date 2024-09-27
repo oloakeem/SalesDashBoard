@@ -21,7 +21,7 @@
   }
   
   .bar-container {
-    width: 400px; /* Adjust chart width */
+    width: 500px; /* Adjust chart width */
     height: 300px; /* Adjust chart height */
     margin: 0 auto; /* Center the chart */
     background-color: #f8f9fa; /* Light background for contrast */

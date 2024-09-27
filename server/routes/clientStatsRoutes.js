@@ -1,45 +1,39 @@
 const express = require('express');
 const router = express.Router();
-const Client = require('../models/Client');
+const getClientsByDateRange = require('./clientDates');
 
-// Endpoint to get client count by membership type
-// Helper function to get clients based on date range
-const getClientsByDateRange = async (days) => {
-    const startDate = new Date();
-    startDate.setDate(startDate.getDate() - days);
-    
-    return await Client.countDocuments({
-      startDate: { $gte: startDate }
-    });
-  };
-  
-  // Endpoint for clients in the last 7 days
-  router.get('/clients-stats/last7days', async (req, res) => {
+
+// Endpoint for clients in the last 7 days
+router.get('/clients-stats/last7days', async (req, res) => {
     try {
-      const count = await getClientsByDateRange(7);
-      res.json({ count });
+        const {dailyCounts,totalCount} = await getClientsByDateRange(7); // Retrieve counts for the last 7 days
+        const labels = Array.from({ length: 7 }, (_, i) => `Day ${i + 1}`); // Labels for the last 7 days
+        res.json({ labels, dailyCounts,totalCount }); // Send labels and counts back to the client
     } catch (error) {
-      res.status(500).json({ error: 'Server Error' });
+        res.status(500).json({ error: 'Server Error' });
     }
-  });
-  
-  // Endpoint for clients in the last 30 days
-  router.get('/clients-stats/last30days', async (req, res) => {
+});
+
+// Endpoint for clients in the last 30 days
+router.get('/clients-stats/last30days', async (req, res) => {
     try {
-      const count = await getClientsByDateRange(30);
-      res.json({ count });
+        const {dailyCounts,totalCount} = await getClientsByDateRange(30); // Retrieve counts for the last 30 days
+        const labels = Array.from({ length: 30 }, (_, i) => `Day ${i + 1}`); // Labels for the last 30 days
+        res.json({ labels, dailyCounts,totalCount }); // Send labels and counts back to the client
     } catch (error) {
-      res.status(500).json({ error: 'Server Error' });
+        res.status(500).json({ error: 'Server Error' });
     }
-  });
-  
-  // Endpoint for clients in the last 365 days
-  router.get('/clients-stats/last365days', async (req, res) => {
+});
+
+// Endpoint for clients in the last 365 days
+router.get('/clients-stats/last365days', async (req, res) => {
     try {
-      const count = await getClientsByDateRange(365);
-      res.json({ count });
+        const {dailyCounts,totalCount} = await getClientsByDateRange(365); // Retrieve counts for the last 365 days
+        const labels = Array.from({ length: 365 }, (_, i) => `Day ${i + 1}`); // Labels for the last 365 days
+        res.json({ labels, dailyCounts,totalCount }); // Send labels and counts back to the client
     } catch (error) {
-      res.status(500).json({ error: 'Server Error' });
+        res.status(500).json({ error: 'Server Error' });
     }
-  });
+});
+
 module.exports = router;
