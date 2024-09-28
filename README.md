@@ -61,4 +61,5 @@ Access and interact with sales data without management privileges.
 
 ---
 ## Live Demo
+Coming soon!
 
